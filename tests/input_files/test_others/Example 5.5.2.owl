@@ -1,0 +1,52 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cfihos: <http://data.cfihos.org/rdl/> .
+@prefix lis: <http://rds.posccaesar.org/ontology/lis14/rdl/> .  # insert
+@prefix ex: <http://example.org/> .
+
+### Classes
+cfihos:CFIHOS-3000521T a owl:Class ;
+    rdfs:label "centrifugal pump" .
+
+cfihos:CFIHOS-10000036 a owl:Class ;
+    rdfs:label "manufacturer" .
+
+cfihos:ObjectReferenceTypeDatum a owl:Class ;
+    rdfs:label "ObjectReferenceTypeDatum" .
+
+cfihos:COMPANY a owl:Class ;
+    rdfs:label "COMPANY" .
+ 
+  cfihos:companyName a owl:DatatypeProperty .    
+
+lis:hasQuality a owl:ObjectProperty.  
+
+lis:QualityQuantifiedAs a owl:ObjectProperty. 
+
+cfihos:hasAssigned a owl:ObjectProperty.   
+
+cfihos:hasDatum a owl:ObjectProperty.   
+
+cfihos:hasValue a owl:ObjectProperty.  
+
+
+
+### Individuals
+ex:2384 a owl:NamedIndividual ;
+    a cfihos:CFIHOS-3000521T ;
+    cfihos:hasAssigned ex:7342 .
+
+ex:7342 a owl:NamedIndividual ;
+    a cfihos:CFIHOS-10000036 ;  
+    cfihos:hasDatum ex:7422 .
+
+ex:7422 a owl:NamedIndividual ;
+    a cfihos:ObjectReferenceTypeDatum ;
+    cfihos:hasValue cfihos:5389 .
+
+### Reference Individuals
+cfihos:5389 a owl:NamedIndividual ;
+    a cfihos:COMPANY ;
+    cfihos:companyName "BLOG"^^xsd:string .     

@@ -1,0 +1,41 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cfihos: <http://data.cfihos.org/rdl/> .
+@prefix lis: <http://rds.posccaesar.org/ontology/lis14/rdl/> .  
+@prefix ex: <http://example.org/> .
+
+### Classes
+cfihos:CFIHOS-3000521T a owl:Class ;
+    rdfs:label "centrifugal pump" .
+
+cfihos:CFIHOS-10000166 a owl:Class ;
+    rdfs:label "tag name" .
+
+cfihos:NonTranslatableStringTypeDatum a owl:Class ;
+    rdfs:label "NonTranslatableStringTypeDatum" .
+
+lis:hasQuality a owl:ObjectProperty.  
+
+lis:QualityQuantifiedAs a owl:ObjectProperty.  
+
+cfihos:hasAssigned a owl:ObjectProperty.   
+
+lis:datumValue a owl:DatatypeProperty .    
+
+
+### Individuals
+ex:2384 a owl:NamedIndividual ;
+    a cfihos:CFIHOS-3000521T ;
+    cfihos:hasAssigned ex:5206 .
+
+ex:5206 a owl:NamedIndividual ;
+    a cfihos:CFIHOS-10000166 ;        
+    cfihos:hasDatum ex:7433 .
+
+ex:7433 a owl:NamedIndividual ;
+    a cfihos:NonTranslatableStringTypeDatum ;
+    lis:datumValue "P-101"^^xsd:string .    
+
+
