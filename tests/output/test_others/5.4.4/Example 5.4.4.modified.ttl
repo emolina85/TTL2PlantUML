@@ -1,0 +1,64 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cfihos: <http://data.cfihos.org/rdl/> .
+@prefix lis: <http://example.org/lis/> .
+@prefix ex: <http://example.org/> .
+
+### Classes
+cfihos:CFIHOS-30000496T a owl:Class ;
+    rdfs:label "pipe" .
+
+cfihos:CFIHOS-40000223 a owl:Class ;
+    rdfs:label "material" .
+
+cfihos:ClassReferenceTypeDatum a owl:Class ;
+    rdfs:label "ClassReferenceTypeDatum" .
+
+cfihos:CFIHOS-60000209 a owl:Class ;
+    rdfs:label "austenitic stainless steel" .
+
+lis:hasQuality a owl:ObjectProperty.    
+
+lis:QualityQuantifiedAs a owl:ObjectProperty.   
+
+### Individuals
+ex:5384 a owl:Class ;
+    rdfs:subClassOf cfihos:CFIHOS-30000496T ;
+    lis:hasQuality ex:7329 .
+
+ex:7329 a owl:Class ;
+    rdfs:subClassOf cfihos:CFIHOS-40000223 ;
+    lis:QualityQuantifiedAs ex:6422 .
+
+ex:6422 a owl:Class ;
+    rdfs:subClassOf cfihos:ClassReferenceTypeDatum ;
+    lis:hasValue cfihos:CFIHOS-60000209 .
+
+
+lis:hasQuality
+    a rdf:Property ;
+    a owl:ObjectProperty ;
+    rdfs:domain ex:5384 ;
+    rdfs:range ex:7329 .
+
+lis:hasQuality
+    rdfs:label "hasQuality" .
+
+lis:QualityQuantifiedAs
+    a rdf:Property ;
+    a owl:ObjectProperty ;
+    rdfs:domain ex:7329 ;
+    rdfs:range ex:6422 .
+
+lis:QualityQuantifiedAs
+    rdfs:label "QualityQuantifiedAs" .
+
+lis:hasValue
+    a rdf:Property ;
+    a owl:ObjectProperty ;
+    rdfs:domain ex:6422 ;
+    rdfs:range cfihos:CFIHOS-60000209 .
+
+lis:hasValue
+    rdfs:label "hasValue" .

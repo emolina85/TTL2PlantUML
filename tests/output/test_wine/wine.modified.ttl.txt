@@ -1,0 +1,919 @@
+@startuml
+title Wine Ontology
+"vin:ItalianWine" <|-- "vin:Chianti"
+"vin:Wine" <|-- "vin:DessertWine"
+"vin:Wine" <|-- "vin:EarlyHarvest"
+"vin:Wine" <|-- "vin:LateHarvest"
+"vin:RedWine" <|-- "vin:Port"
+"vin:Bordeaux" <|-- "vin:Sauternes"
+"vin:LateHarvest" <|-- "vin:Sauternes"
+"vin:DessertWine" <|-- "vin:SweetRiesling"
+"fowl:PotableLiquid" <|-- "vin:Wine"
+"vin:WineTaste" <|-- "vin:WineBody"
+"vin:WineDescriptor" <|-- "vin:WineColor"
+"vin:WineTaste" <|-- "vin:WineFlavor"
+"fowl:Grape" <|-- "vin:WineGrape"
+"vin:WineTaste" <|-- "vin:WineSugar"
+"vin:WineDescriptor" <|-- "vin:WineTaste"
+"vin:Region" <|-- "vin:AlsaceRegion"
+"vin:Region" <|-- "vin:AnjouRegion"
+"vin:Region" <|-- "vin:ArroyoGrandeRegion"
+"vin:Region" <|-- "vin:AustralianRegion"
+"vin:Winery" <|-- "vin:Bancroft"
+"vin:Chardonnay" <|-- "vin:BancroftChardonnay"
+"vin:Region" <|-- "vin:BeaujolaisRegion"
+"vin:Winery" <|-- "vin:Beringer"
+"vin:Region" <|-- "vin:BordeauxRegion"
+"vin:Region" <|-- "vin:BourgogneRegion"
+"owl:Thing" <|-- "vin:CabernetFrancGrape"
+"vin:WineGrape" <|-- "vin:CabernetFrancGrape"
+"owl:Thing" <|-- "vin:CabernetSauvignonGrape"
+"vin:WineGrape" <|-- "vin:CabernetSauvignonGrape"
+"vin:Region" <|-- "vin:CaliforniaRegion"
+"vin:Region" <|-- "vin:CentralCoastRegion"
+"vin:Region" <|-- "vin:CentralTexasRegion"
+"vin:WineGrape" <|-- "vin:ChardonnayGrape"
+"vin:Winery" <|-- "vin:ChateauChevalBlanc"
+"vin:StEmilion" <|-- "vin:ChateauChevalBlancStEmilion"
+"vin:Winery" <|-- "vin:ChateauDYchem"
+"vin:Sauternes" <|-- "vin:ChateauDYchemSauterne"
+"vin:Winery" <|-- "vin:ChateauDeMeursault"
+"vin:Meursault" <|-- "vin:ChateauDeMeursaultMeursault"
+"vin:Winery" <|-- "vin:ChateauLafiteRothschild"
+"vin:Pauillac" <|-- "vin:ChateauLafiteRothschildPauillac"
+"vin:Margaux" <|-- "vin:ChateauMargaux"
+"vin:Winery" <|-- "vin:ChateauMargauxWinery"
+"vin:Winery" <|-- "vin:ChateauMorgon"
+"vin:Beaujolais" <|-- "vin:ChateauMorgonBeaujolais"
+"owl:Thing" <|-- "vin:CheninBlancGrape"
+"vin:WineGrape" <|-- "vin:CheninBlancGrape"
+"vin:Chianti" <|-- "vin:ChiantiClassico"
+"vin:Region" <|-- "vin:ChiantiRegion"
+"vin:Winery" <|-- "vin:ClosDeLaPoussie"
+"vin:Sancerre" <|-- "vin:ClosDeLaPoussieSancerre"
+"vin:Winery" <|-- "vin:ClosDeVougeot"
+"vin:CotesDOr" <|-- "vin:ClosDeVougeotCotesDOr"
+"vin:Winery" <|-- "vin:CongressSprings"
+"vin:Semillon" <|-- "vin:CongressSpringsSemillon"
+"vin:Winery" <|-- "vin:Corbans"
+"vin:Riesling" <|-- "vin:CorbansDryWhiteRiesling"
+"vin:SauvignonBlanc" <|-- "vin:CorbansPrivateBinSauvignonBlanc"
+"vin:SauvignonBlanc" <|-- "vin:CorbansSauvignonBlanc"
+"vin:Winery" <|-- "vin:CortonMontrachet"
+"vin:WhiteBurgundy" <|-- "vin:CortonMontrachetWhiteBurgundy"
+"vin:Region" <|-- "vin:CotesDOrRegion"
+"vin:Winery" <|-- "vin:Cotturi"
+"vin:Zinfandel" <|-- "vin:CotturiZinfandel"
+"vin:Winery" <|-- "vin:DAnjou"
+"owl:Thing" <|-- "vin:Delicate"
+"vin:WineFlavor" <|-- "vin:Delicate"
+"owl:Thing" <|-- "vin:Dry"
+"vin:WineSugar" <|-- "vin:Dry"
+"vin:Region" <|-- "vin:EdnaValleyRegion"
+"vin:Winery" <|-- "vin:Elyse"
+"vin:Zinfandel" <|-- "vin:ElyseZinfandel"
+"vin:Winery" <|-- "vin:Forman"
+"vin:CabernetSauvignon" <|-- "vin:FormanCabernetSauvignon"
+"vin:Chardonnay" <|-- "vin:FormanChardonnay"
+"vin:Winery" <|-- "vin:Foxen"
+"vin:CheninBlanc" <|-- "vin:FoxenCheninBlanc"
+"vin:Region" <|-- "vin:FrenchRegion"
+"owl:Thing" <|-- "vin:Full"
+"vin:WineBody" <|-- "vin:Full"
+"vin:WineGrape" <|-- "vin:GamayGrape"
+"vin:Winery" <|-- "vin:GaryFarrell"
+"vin:Merlot" <|-- "vin:GaryFarrellMerlot"
+"vin:Region" <|-- "vin:GermanyRegion"
+"vin:Winery" <|-- "vin:Handley"
+"vin:Region" <|-- "vin:ItalianRegion"
+"vin:Winery" <|-- "vin:KalinCellars"
+"vin:Semillon" <|-- "vin:KalinCellarsSemillon"
+"vin:Winery" <|-- "vin:KathrynKennedy"
+"vin:Meritage" <|-- "vin:KathrynKennedyLateral"
+"vin:Winery" <|-- "vin:LaneTanner"
+"vin:PinotNoir" <|-- "vin:LaneTannerPinotNoir"
+"owl:Thing" <|-- "vin:Light"
+"vin:WineBody" <|-- "vin:Light"
+"vin:Region" <|-- "vin:LoireRegion"
+"vin:Winery" <|-- "vin:Longridge"
+"vin:Merlot" <|-- "vin:LongridgeMerlot"
+"owl:Thing" <|-- "vin:MalbecGrape"
+"vin:WineGrape" <|-- "vin:MalbecGrape"
+"vin:Region" <|-- "vin:MargauxRegion"
+"vin:Winery" <|-- "vin:Marietta"
+"vin:CabernetSauvignon" <|-- "vin:MariettaCabernetSauvignon"
+"vin:RedTableWine" <|-- "vin:MariettaOldVinesRed"
+"vin:PetiteSyrah" <|-- "vin:MariettaPetiteSyrah"
+"vin:Zinfandel" <|-- "vin:MariettaZinfandel"
+"vin:Winery" <|-- "vin:McGuinnesso"
+"owl:Thing" <|-- "vin:Medium"
+"vin:WineBody" <|-- "vin:Medium"
+"vin:Region" <|-- "vin:MedocRegion"
+"vin:Region" <|-- "vin:MendocinoRegion"
+"owl:Thing" <|-- "vin:MerlotGrape"
+"vin:WineGrape" <|-- "vin:MerlotGrape"
+"vin:Region" <|-- "vin:MeursaultRegion"
+"owl:Thing" <|-- "vin:Moderate"
+"vin:WineFlavor" <|-- "vin:Moderate"
+"vin:Winery" <|-- "vin:MountEdenVineyard"
+"vin:Chardonnay" <|-- "vin:MountEdenVineyardEdnaValleyChardonnay"
+"vin:PinotNoir" <|-- "vin:MountEdenVineyardEstatePinotNoir"
+"vin:Winery" <|-- "vin:Mountadam"
+"vin:Chardonnay" <|-- "vin:MountadamChardonnay"
+"vin:PinotNoir" <|-- "vin:MountadamPinotNoir"
+"vin:DryRiesling" <|-- "vin:MountadamRiesling"
+"vin:Region" <|-- "vin:MuscadetRegion"
+"vin:Region" <|-- "vin:NapaRegion"
+"vin:Region" <|-- "vin:NewZealandRegion"
+"owl:Thing" <|-- "vin:OffDry"
+"vin:WineSugar" <|-- "vin:OffDry"
+"vin:Winery" <|-- "vin:PageMillWinery"
+"vin:CabernetSauvignon" <|-- "vin:PageMillWineryCabernetSauvignon"
+"vin:Region" <|-- "vin:PauillacRegion"
+"vin:Winery" <|-- "vin:PeterMccoy"
+"vin:Chardonnay" <|-- "vin:PeterMccoyChardonnay"
+"vin:WineGrape" <|-- "vin:PetiteSyrahGrape"
+"owl:Thing" <|-- "vin:PetiteVerdotGrape"
+"vin:WineGrape" <|-- "vin:PetiteVerdotGrape"
+"owl:Thing" <|-- "vin:PinotBlancGrape"
+"vin:WineGrape" <|-- "vin:PinotBlancGrape"
+"vin:WineGrape" <|-- "vin:PinotNoirGrape"
+"vin:Region" <|-- "vin:PortugalRegion"
+"vin:Winery" <|-- "vin:PulignyMontrachet"
+"vin:WhiteBurgundy" <|-- "vin:PulignyMontrachetWhiteBurgundy"
+"owl:Thing" <|-- "vin:Red"
+"vin:WineColor" <|-- "vin:Red"
+"vin:WineGrape" <|-- "vin:RieslingGrape"
+"owl:Thing" <|-- "vin:Rose"
+"vin:WineColor" <|-- "vin:Rose"
+"vin:Anjou" <|-- "vin:RoseDAnjou"
+"vin:Region" <|-- "vin:SancerreRegion"
+"vin:WineGrape" <|-- "vin:SangioveseGrape"
+"vin:Region" <|-- "vin:SantaBarbaraRegion"
+"vin:Winery" <|-- "vin:SantaCruzMountainVineyard"
+"vin:CabernetSauvignon" <|-- "vin:SantaCruzMountainVineyardCabernetSauvignon"
+"vin:Region" <|-- "vin:SantaCruzMountainsRegion"
+"vin:Winery" <|-- "vin:SaucelitoCanyon"
+"vin:Zinfandel" <|-- "vin:SaucelitoCanyonZinfandel"
+"vin:Zinfandel" <|-- "vin:SaucelitoCanyonZinfandel1998"
+"vin:Region" <|-- "vin:SauterneRegion"
+"owl:Thing" <|-- "vin:SauvignonBlancGrape"
+"vin:WineGrape" <|-- "vin:SauvignonBlancGrape"
+"vin:Winery" <|-- "vin:SchlossRothermel"
+"vin:SweetRiesling" <|-- "vin:SchlossRothermelTrochenbierenausleseRiesling"
+"vin:Winery" <|-- "vin:SchlossVolrad"
+"vin:SweetRiesling" <|-- "vin:SchlossVolradTrochenbierenausleseRiesling"
+"vin:Winery" <|-- "vin:SeanThackrey"
+"vin:PetiteSyrah" <|-- "vin:SeanThackreySiriusPetiteSyrah"
+"vin:Winery" <|-- "vin:Selaks"
+"vin:IceWine" <|-- "vin:SelaksIceWine"
+"vin:SauvignonBlanc" <|-- "vin:SelaksSauvignonBlanc"
+"owl:Thing" <|-- "vin:SemillonGrape"
+"vin:WineGrape" <|-- "vin:SemillonGrape"
+"vin:Winery" <|-- "vin:SevreEtMaine"
+"vin:Muscadet" <|-- "vin:SevreEtMaineMuscadet"
+"vin:Region" <|-- "vin:SonomaRegion"
+"vin:Region" <|-- "vin:SouthAustraliaRegion"
+"vin:Region" <|-- "vin:StEmilionRegion"
+"vin:Winery" <|-- "vin:StGenevieve"
+"vin:WhiteWine" <|-- "vin:StGenevieveTexasWhite"
+"vin:Winery" <|-- "vin:Stonleigh"
+"vin:SauvignonBlanc" <|-- "vin:StonleighSauvignonBlanc"
+"owl:Thing" <|-- "vin:Strong"
+"vin:WineFlavor" <|-- "vin:Strong"
+"owl:Thing" <|-- "vin:Sweet"
+"vin:WineSugar" <|-- "vin:Sweet"
+"vin:Winery" <|-- "vin:Taylor"
+"vin:Port" <|-- "vin:TaylorPort"
+"vin:Region" <|-- "vin:TexasRegion"
+"vin:Region" <|-- "vin:ToursRegion"
+"vin:Region" <|-- "vin:USRegion"
+"vin:Winery" <|-- "vin:Ventana"
+"vin:CheninBlanc" <|-- "vin:VentanaCheninBlanc"
+"owl:Thing" <|-- "vin:White"
+"vin:WineColor" <|-- "vin:White"
+"vin:Winery" <|-- "vin:WhitehallLane"
+"vin:CabernetFranc" <|-- "vin:WhitehallLaneCabernetFranc"
+"vin:DessertWine" <|-- "vin:WhitehallLanePrimavera"
+"vin:VintageYear" <|-- "vin:Year1998"
+"vin:WineGrape" <|-- "vin:ZinfandelGrape"
+Class "vin:AlsatianWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AlsatianWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b1" [[n125346ab5e704df281e1d9bb81189e88b1]] {
+}
+Class "vin:AmericanWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AmericanWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b5" [[n125346ab5e704df281e1d9bb81189e88b5]] {
+}
+Class "vin:Anjou" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b9" [[n125346ab5e704df281e1d9bb81189e88b9]] {
+}
+Class "vin:Beaujolais" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b17" [[n125346ab5e704df281e1d9bb81189e88b17]] {
+}
+Class "vin:Bordeaux" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b27" [[n125346ab5e704df281e1d9bb81189e88b27]] {
+}
+Class "vin:Burgundy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b31" [[n125346ab5e704df281e1d9bb81189e88b31]] {
+}
+Class "vin:CabernetFranc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b36" [[n125346ab5e704df281e1d9bb81189e88b36]] {
+}
+Class "vin:CabernetSauvignon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b46" [[n125346ab5e704df281e1d9bb81189e88b46]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b53" [[n125346ab5e704df281e1d9bb81189e88b53]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b57" [[n125346ab5e704df281e1d9bb81189e88b57]] {
+}
+Class "vin:CaliforniaWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b62" [[n125346ab5e704df281e1d9bb81189e88b62]] {
+}
+Class "vin:Chardonnay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chardonnay]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b66" [[n125346ab5e704df281e1d9bb81189e88b66]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b73" [[n125346ab5e704df281e1d9bb81189e88b73]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b77" [[n125346ab5e704df281e1d9bb81189e88b77]] {
+}
+Class "vin:CheninBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b81" [[n125346ab5e704df281e1d9bb81189e88b81]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b88" [[n125346ab5e704df281e1d9bb81189e88b88]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b92" [[n125346ab5e704df281e1d9bb81189e88b92]] {
+}
+Class "vin:Chianti" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b98" [[n125346ab5e704df281e1d9bb81189e88b98]] {
+}
+Class "vin:CotesDOr" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotesDOr]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b106" [[n125346ab5e704df281e1d9bb81189e88b106]] {
+}
+Class "vin:DessertWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b112" [[n125346ab5e704df281e1d9bb81189e88b112]] {
+}
+Class "vin:DryRedWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRedWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b115" [[n125346ab5e704df281e1d9bb81189e88b115]] {
+}
+Class "vin:DryRiesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRiesling]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b118" [[n125346ab5e704df281e1d9bb81189e88b118]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b123" [[n125346ab5e704df281e1d9bb81189e88b123]] {
+}
+Class "vin:DryWhiteWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWhiteWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b128" [[n125346ab5e704df281e1d9bb81189e88b128]] {
+}
+Class "vin:DryWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b131" [[n125346ab5e704df281e1d9bb81189e88b131]] {
+}
+Class "vin:EarlyHarvest" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EarlyHarvest]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b136" [[n125346ab5e704df281e1d9bb81189e88b136]] {
+}
+Class "vin:FrenchWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b139" [[n125346ab5e704df281e1d9bb81189e88b139]] {
+}
+Class "vin:FullBodiedWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FullBodiedWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b143" [[n125346ab5e704df281e1d9bb81189e88b143]] {
+}
+Class "vin:Gamay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Gamay]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b147" [[n125346ab5e704df281e1d9bb81189e88b147]] {
+}
+Class "vin:GermanWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b153" [[n125346ab5e704df281e1d9bb81189e88b153]] {
+}
+Class "vin:IceWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#IceWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b157" [[n125346ab5e704df281e1d9bb81189e88b157]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b163" [[n125346ab5e704df281e1d9bb81189e88b163]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b167" [[n125346ab5e704df281e1d9bb81189e88b167]] {
+}
+Class "vin:ItalianWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b170" [[n125346ab5e704df281e1d9bb81189e88b170]] {
+}
+Class "vin:LateHarvest" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b175" [[n125346ab5e704df281e1d9bb81189e88b175]] {
+}
+Class "vin:Loire" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b179" [[n125346ab5e704df281e1d9bb81189e88b179]] {
+}
+Class "vin:Margaux" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Margaux]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b183" [[n125346ab5e704df281e1d9bb81189e88b183]] {
+}
+Class "vin:Medoc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b190" [[n125346ab5e704df281e1d9bb81189e88b190]] {
+}
+Class "vin:Meritage" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meritage]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b198" [[n125346ab5e704df281e1d9bb81189e88b198]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b196" [[n125346ab5e704df281e1d9bb81189e88b196]] {
+}
+Class "vin:Merlot" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b209" [[n125346ab5e704df281e1d9bb81189e88b209]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b216" [[n125346ab5e704df281e1d9bb81189e88b216]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b220" [[n125346ab5e704df281e1d9bb81189e88b220]] {
+}
+Class "vin:Meursault" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meursault]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b225" [[n125346ab5e704df281e1d9bb81189e88b225]] {
+}
+Class "vin:Muscadet" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b230" [[n125346ab5e704df281e1d9bb81189e88b230]] {
+}
+Class "vin:Pauillac" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b239" [[n125346ab5e704df281e1d9bb81189e88b239]] {
+}
+Class "vin:PetiteSyrah" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b247" [[n125346ab5e704df281e1d9bb81189e88b247]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b254" [[n125346ab5e704df281e1d9bb81189e88b254]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b258" [[n125346ab5e704df281e1d9bb81189e88b258]] {
+}
+Class "vin:PinotBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlanc]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b263" [[n125346ab5e704df281e1d9bb81189e88b263]] {
+}
+Class "vin:PinotNoir" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoir]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b270" [[n125346ab5e704df281e1d9bb81189e88b270]] {
+}
+Class "vin:Port" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port]] {
+}
+Class "vin:RedBordeaux" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBordeaux]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b281" [[n125346ab5e704df281e1d9bb81189e88b281]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b285" [[n125346ab5e704df281e1d9bb81189e88b285]] {
+}
+Class "vin:RedBurgundy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b288" [[n125346ab5e704df281e1d9bb81189e88b288]] {
+}
+Class "vin:RedTableWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedTableWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b293" [[n125346ab5e704df281e1d9bb81189e88b293]] {
+}
+Class "vin:RedWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b297" [[n125346ab5e704df281e1d9bb81189e88b297]] {
+}
+Class "vin:Region" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region]] {
+}
+Class "vin:Riesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b301" [[n125346ab5e704df281e1d9bb81189e88b301]] {
+}
+Class "vin:RoseWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RoseWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b308" [[n125346ab5e704df281e1d9bb81189e88b308]] {
+}
+Class "vin:Sancerre" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b312" [[n125346ab5e704df281e1d9bb81189e88b312]] {
+}
+Class "vin:Sauternes" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes]] {
+}
+Class "vin:SauvignonBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlanc]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b324" [[n125346ab5e704df281e1d9bb81189e88b324]] {
+}
+Class "vin:Semillon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Semillon]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b330" [[n125346ab5e704df281e1d9bb81189e88b330]] {
+}
+Class "vin:SemillonOrSauvignonBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b338" [[n125346ab5e704df281e1d9bb81189e88b338]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b336" [[n125346ab5e704df281e1d9bb81189e88b336]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b344" [[n125346ab5e704df281e1d9bb81189e88b344]] {
+}
+Class "vin:StEmilion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b348" [[n125346ab5e704df281e1d9bb81189e88b348]] {
+}
+Class "vin:SweetRiesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetRiesling]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b356" [[n125346ab5e704df281e1d9bb81189e88b356]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b361" [[n125346ab5e704df281e1d9bb81189e88b361]] {
+}
+Class "vin:SweetWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b365" [[n125346ab5e704df281e1d9bb81189e88b365]] {
+}
+Class "vin:TableWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b369" [[n125346ab5e704df281e1d9bb81189e88b369]] {
+}
+Class "vin:TexasWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TexasWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b373" [[n125346ab5e704df281e1d9bb81189e88b373]] {
+}
+Class "vin:Tours" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Tours]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b377" [[n125346ab5e704df281e1d9bb81189e88b377]] {
+}
+Class "vin:Vintage" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Vintage]] {
+}
+Class "vin:VintageYear" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VintageYear]] {
+[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#yearValue vin:yearValue]] : [[http://www.w3.org/2001/XMLSchema#positiveInteger xsd:positiveInteger]]
+}
+Class "vin:WhiteBordeaux" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBordeaux]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b384" [[n125346ab5e704df281e1d9bb81189e88b384]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b388" [[n125346ab5e704df281e1d9bb81189e88b388]] {
+}
+Class "vin:WhiteBurgundy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b391" [[n125346ab5e704df281e1d9bb81189e88b391]] {
+}
+Class "vin:WhiteLoire" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteLoire]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b396" [[n125346ab5e704df281e1d9bb81189e88b396]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b400" [[n125346ab5e704df281e1d9bb81189e88b400]] {
+}
+Class "vin:WhiteNonSweetWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteNonSweetWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b406" [[n125346ab5e704df281e1d9bb81189e88b406]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b404" [[n125346ab5e704df281e1d9bb81189e88b404]] {
+}
+Class "vin:WhiteTableWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteTableWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b411" [[n125346ab5e704df281e1d9bb81189e88b411]] {
+}
+Class "vin:WhiteWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b415" [[n125346ab5e704df281e1d9bb81189e88b415]] {
+}
+Class "vin:Wine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine]] {
+}
+Class "vin:WineBody" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineBody]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b427" [[n125346ab5e704df281e1d9bb81189e88b427]] {
+}
+Class "vin:WineColor" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b431" [[n125346ab5e704df281e1d9bb81189e88b431]] {
+}
+Class "vin:WineDescriptor" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b435" [[n125346ab5e704df281e1d9bb81189e88b435]] {
+}
+Class "vin:WineFlavor" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineFlavor]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b438" [[n125346ab5e704df281e1d9bb81189e88b438]] {
+}
+Class "vin:WineGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineGrape]] {
+}
+Class "vin:WineSugar" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineSugar]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b442" [[n125346ab5e704df281e1d9bb81189e88b442]] {
+}
+Class "vin:WineTaste" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste]] {
+}
+Class "vin:Winery" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Winery]] {
+}
+Class "vin:Zinfandel" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b446" [[n125346ab5e704df281e1d9bb81189e88b446]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b453" [[n125346ab5e704df281e1d9bb81189e88b453]] {
+}
+Class ":n125346ab5e704df281e1d9bb81189e88b457" [[n125346ab5e704df281e1d9bb81189e88b457]] {
+}
+Class "vin:AlsaceRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AlsaceRegion]] {
+}
+Class "vin:AnjouRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AnjouRegion]] {
+}
+Class "vin:ArroyoGrandeRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ArroyoGrandeRegion]] {
+}
+Class "vin:AustralianRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AustralianRegion]] {
+}
+Class "vin:Bancroft" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bancroft]] {
+}
+Class "vin:BancroftChardonnay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BancroftChardonnay]] {
+}
+Class "vin:BeaujolaisRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BeaujolaisRegion]] {
+}
+Class "vin:Beringer" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beringer]] {
+}
+Class "vin:BordeauxRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BordeauxRegion]] {
+}
+Class "vin:BourgogneRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#BourgogneRegion]] {
+}
+Class "vin:CabernetFrancGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFrancGrape]] {
+}
+Class "vin:CabernetSauvignonGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignonGrape]] {
+}
+Class "vin:CaliforniaRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaRegion]] {
+}
+Class "vin:CentralCoastRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CentralCoastRegion]] {
+}
+Class "vin:CentralTexasRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CentralTexasRegion]] {
+}
+Class "vin:ChardonnayGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChardonnayGrape]] {
+}
+Class "vin:ChateauChevalBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauChevalBlanc]] {
+}
+Class "vin:ChateauChevalBlancStEmilion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauChevalBlancStEmilion]] {
+}
+Class "vin:ChateauDYchem" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDYchem]] {
+}
+Class "vin:ChateauDYchemSauterne" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDYchemSauterne]] {
+}
+Class "vin:ChateauDeMeursault" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDeMeursault]] {
+}
+Class "vin:ChateauDeMeursaultMeursault" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauDeMeursaultMeursault]] {
+}
+Class "vin:ChateauLafiteRothschild" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauLafiteRothschild]] {
+}
+Class "vin:ChateauLafiteRothschildPauillac" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauLafiteRothschildPauillac]] {
+}
+Class "vin:ChateauMargaux" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMargaux]] {
+}
+Class "vin:ChateauMargauxWinery" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMargauxWinery]] {
+}
+Class "vin:ChateauMorgon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMorgon]] {
+}
+Class "vin:ChateauMorgonBeaujolais" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChateauMorgonBeaujolais]] {
+}
+Class "vin:CheninBlancGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlancGrape]] {
+}
+Class "vin:ChiantiClassico" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChiantiClassico]] {
+}
+Class "vin:ChiantiRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ChiantiRegion]] {
+}
+Class "vin:ClosDeLaPoussie" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeLaPoussie]] {
+}
+Class "vin:ClosDeLaPoussieSancerre" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeLaPoussieSancerre]] {
+}
+Class "vin:ClosDeVougeot" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeVougeot]] {
+}
+Class "vin:ClosDeVougeotCotesDOr" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ClosDeVougeotCotesDOr]] {
+}
+Class "vin:CongressSprings" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CongressSprings]] {
+}
+Class "vin:CongressSpringsSemillon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CongressSpringsSemillon]] {
+}
+Class "vin:Corbans" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Corbans]] {
+}
+Class "vin:CorbansDryWhiteRiesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CorbansDryWhiteRiesling]] {
+}
+Class "vin:CorbansPrivateBinSauvignonBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CorbansPrivateBinSauvignonBlanc]] {
+}
+Class "vin:CorbansSauvignonBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CorbansSauvignonBlanc]] {
+}
+Class "vin:CortonMontrachet" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CortonMontrachet]] {
+}
+Class "vin:CortonMontrachetWhiteBurgundy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CortonMontrachetWhiteBurgundy]] {
+}
+Class "vin:CotesDOrRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotesDOrRegion]] {
+}
+Class "vin:Cotturi" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Cotturi]] {
+}
+Class "vin:CotturiZinfandel" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotturiZinfandel]] {
+}
+Class "vin:DAnjou" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DAnjou]] {
+}
+Class "vin:Delicate" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate]] {
+}
+Class "vin:Dry" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry]] {
+}
+Class "vin:EdnaValleyRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EdnaValleyRegion]] {
+}
+Class "vin:Elyse" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Elyse]] {
+}
+Class "vin:ElyseZinfandel" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ElyseZinfandel]] {
+}
+Class "vin:Forman" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Forman]] {
+}
+Class "vin:FormanCabernetSauvignon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FormanCabernetSauvignon]] {
+}
+Class "vin:FormanChardonnay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FormanChardonnay]] {
+}
+Class "vin:Foxen" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Foxen]] {
+}
+Class "vin:FoxenCheninBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FoxenCheninBlanc]] {
+}
+Class "vin:FrenchRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchRegion]] {
+}
+Class "vin:Full" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full]] {
+}
+Class "vin:GamayGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GamayGrape]] {
+}
+Class "vin:GaryFarrell" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GaryFarrell]] {
+}
+Class "vin:GaryFarrellMerlot" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GaryFarrellMerlot]] {
+}
+Class "vin:GermanyRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanyRegion]] {
+}
+Class "vin:Handley" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Handley]] {
+}
+Class "vin:ItalianRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianRegion]] {
+}
+Class "vin:KalinCellars" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KalinCellars]] {
+}
+Class "vin:KalinCellarsSemillon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KalinCellarsSemillon]] {
+}
+Class "vin:KathrynKennedy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KathrynKennedy]] {
+}
+Class "vin:KathrynKennedyLateral" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#KathrynKennedyLateral]] {
+}
+Class "vin:LaneTanner" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LaneTanner]] {
+}
+Class "vin:LaneTannerPinotNoir" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LaneTannerPinotNoir]] {
+}
+Class "vin:Light" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light]] {
+}
+Class "vin:LoireRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LoireRegion]] {
+}
+Class "vin:Longridge" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Longridge]] {
+}
+Class "vin:LongridgeMerlot" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LongridgeMerlot]] {
+}
+Class "vin:MalbecGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MalbecGrape]] {
+}
+Class "vin:MargauxRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MargauxRegion]] {
+}
+Class "vin:Marietta" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Marietta]] {
+}
+Class "vin:MariettaCabernetSauvignon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaCabernetSauvignon]] {
+}
+Class "vin:MariettaOldVinesRed" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaOldVinesRed]] {
+}
+Class "vin:MariettaPetiteSyrah" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaPetiteSyrah]] {
+}
+Class "vin:MariettaZinfandel" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MariettaZinfandel]] {
+}
+Class "vin:McGuinnesso" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#McGuinnesso]] {
+}
+Class "vin:Medium" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium]] {
+}
+Class "vin:MedocRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MedocRegion]] {
+}
+Class "vin:MendocinoRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MendocinoRegion]] {
+}
+Class "vin:MerlotGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MerlotGrape]] {
+}
+Class "vin:MeursaultRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MeursaultRegion]] {
+}
+Class "vin:Moderate" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate]] {
+}
+Class "vin:MountEdenVineyard" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyard]] {
+}
+Class "vin:MountEdenVineyardEdnaValleyChardonnay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyardEdnaValleyChardonnay]] {
+}
+Class "vin:MountEdenVineyardEstatePinotNoir" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountEdenVineyardEstatePinotNoir]] {
+}
+Class "vin:Mountadam" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Mountadam]] {
+}
+Class "vin:MountadamChardonnay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountadamChardonnay]] {
+}
+Class "vin:MountadamPinotNoir" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountadamPinotNoir]] {
+}
+Class "vin:MountadamRiesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MountadamRiesling]] {
+}
+Class "vin:MuscadetRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#MuscadetRegion]] {
+}
+Class "vin:NapaRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NapaRegion]] {
+}
+Class "vin:NewZealandRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#NewZealandRegion]] {
+}
+Class "vin:OffDry" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry]] {
+}
+Class "vin:PageMillWinery" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PageMillWinery]] {
+}
+Class "vin:PageMillWineryCabernetSauvignon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PageMillWineryCabernetSauvignon]] {
+}
+Class "vin:PauillacRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PauillacRegion]] {
+}
+Class "vin:PeterMccoy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PeterMccoy]] {
+}
+Class "vin:PeterMccoyChardonnay" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PeterMccoyChardonnay]] {
+}
+Class "vin:PetiteSyrahGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrahGrape]] {
+}
+Class "vin:PetiteVerdotGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteVerdotGrape]] {
+}
+Class "vin:PinotBlancGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlancGrape]] {
+}
+Class "vin:PinotNoirGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoirGrape]] {
+}
+Class "vin:PortugalRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PortugalRegion]] {
+}
+Class "vin:PulignyMontrachet" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PulignyMontrachet]] {
+}
+Class "vin:PulignyMontrachetWhiteBurgundy" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PulignyMontrachetWhiteBurgundy]] {
+}
+Class "vin:Red" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red]] {
+}
+Class "vin:RieslingGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RieslingGrape]] {
+}
+Class "vin:Rose" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose]] {
+}
+Class "vin:RoseDAnjou" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RoseDAnjou]] {
+}
+Class "vin:SancerreRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SancerreRegion]] {
+}
+Class "vin:SangioveseGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SangioveseGrape]] {
+}
+Class "vin:SantaBarbaraRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaBarbaraRegion]] {
+}
+Class "vin:SantaCruzMountainVineyard" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainVineyard]] {
+}
+Class "vin:SantaCruzMountainVineyardCabernetSauvignon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainVineyardCabernetSauvignon]] {
+}
+Class "vin:SantaCruzMountainsRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SantaCruzMountainsRegion]] {
+}
+Class "vin:SaucelitoCanyon" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyon]] {
+}
+Class "vin:SaucelitoCanyonZinfandel" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyonZinfandel]] {
+}
+Class "vin:SaucelitoCanyonZinfandel1998" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SaucelitoCanyonZinfandel1998]] {
+}
+Class "vin:SauterneRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauterneRegion]] {
+}
+Class "vin:SauvignonBlancGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlancGrape]] {
+}
+Class "vin:SchlossRothermel" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossRothermel]] {
+}
+Class "vin:SchlossRothermelTrochenbierenausleseRiesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossRothermelTrochenbierenausleseRiesling]] {
+}
+Class "vin:SchlossVolrad" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossVolrad]] {
+}
+Class "vin:SchlossVolradTrochenbierenausleseRiesling" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SchlossVolradTrochenbierenausleseRiesling]] {
+}
+Class "vin:SeanThackrey" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SeanThackrey]] {
+}
+Class "vin:SeanThackreySiriusPetiteSyrah" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SeanThackreySiriusPetiteSyrah]] {
+}
+Class "vin:Selaks" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Selaks]] {
+}
+Class "vin:SelaksIceWine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SelaksIceWine]] {
+}
+Class "vin:SelaksSauvignonBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SelaksSauvignonBlanc]] {
+}
+Class "vin:SemillonGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonGrape]] {
+}
+Class "vin:SevreEtMaine" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SevreEtMaine]] {
+}
+Class "vin:SevreEtMaineMuscadet" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SevreEtMaineMuscadet]] {
+}
+Class "vin:SonomaRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SonomaRegion]] {
+}
+Class "vin:SouthAustraliaRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SouthAustraliaRegion]] {
+}
+Class "vin:StEmilionRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilionRegion]] {
+}
+Class "vin:StGenevieve" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StGenevieve]] {
+}
+Class "vin:StGenevieveTexasWhite" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StGenevieveTexasWhite]] {
+}
+Class "vin:Stonleigh" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Stonleigh]] {
+}
+Class "vin:StonleighSauvignonBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StonleighSauvignonBlanc]] {
+}
+Class "vin:Strong" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong]] {
+}
+Class "vin:Sweet" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet]] {
+}
+Class "vin:Taylor" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Taylor]] {
+}
+Class "vin:TaylorPort" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TaylorPort]] {
+}
+Class "vin:TexasRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TexasRegion]] {
+}
+Class "vin:ToursRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ToursRegion]] {
+}
+Class "vin:USRegion" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#USRegion]] {
+}
+Class "vin:Ventana" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Ventana]] {
+}
+Class "vin:VentanaCheninBlanc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VentanaCheninBlanc]] {
+}
+Class "vin:White" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White]] {
+}
+Class "vin:WhitehallLane" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLane]] {
+}
+Class "vin:WhitehallLaneCabernetFranc" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLaneCabernetFranc]] {
+}
+Class "vin:WhitehallLanePrimavera" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhitehallLanePrimavera]] {
+}
+Class "vin:Year1998" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Year1998]] {
+}
+Class "vin:ZinfandelGrape" [[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ZinfandelGrape]] {
+}
+"vin:BancroftChardonnay" --> "vin:WineBody" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody vin:hasBody]]"
+"vin:Wine" --> "vin:WineColor" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor vin:hasColor]]"
+"vin:BancroftChardonnay" --> "vin:WineFlavor" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor vin:hasFlavor]]"
+"vin:BancroftChardonnay" --> "vin:Bancroft" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker vin:hasMaker]]"
+"vin:BancroftChardonnay" --> "vin:WineSugar" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar vin:hasSugar]]"
+"vin:Wine" --> "vin:WineDescriptor" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor vin:hasWineDescriptor]]"
+"vin:Wine" --> "vin:WineGrape" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape vin:madeFromGrape]]"
+"owl:Thing" --> "vin:Region" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn vin:locatedIn]]"
+"vin:Region" --> "vin:Region" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#adjacentRegion vin:adjacentRegion]]"
+"vin:Vintage" --> "vin:VintageYear" : "[[http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear vin:hasVintageYear]]"
+":n125346ab5e704df281e1d9bb81189e88b1" .. "vin:AlsatianWine"
+":n125346ab5e704df281e1d9bb81189e88b5" .. "vin:AmericanWine"
+":n125346ab5e704df281e1d9bb81189e88b9" .. "vin:Anjou"
+":n125346ab5e704df281e1d9bb81189e88b17" .. "vin:Beaujolais"
+":n125346ab5e704df281e1d9bb81189e88b27" .. "vin:Bordeaux"
+":n125346ab5e704df281e1d9bb81189e88b31" .. "vin:Burgundy"
+":n125346ab5e704df281e1d9bb81189e88b36" .. "vin:CabernetFranc"
+":n125346ab5e704df281e1d9bb81189e88b46" .. "vin:CabernetSauvignon"
+":n125346ab5e704df281e1d9bb81189e88b62" .. "vin:CaliforniaWine"
+":n125346ab5e704df281e1d9bb81189e88b66" .. "vin:Chardonnay"
+":n125346ab5e704df281e1d9bb81189e88b81" .. "vin:CheninBlanc"
+":n125346ab5e704df281e1d9bb81189e88b106" .. "vin:CotesDOr"
+":n125346ab5e704df281e1d9bb81189e88b115" .. "vin:DryRedWine"
+":n125346ab5e704df281e1d9bb81189e88b118" .. "vin:DryRiesling"
+":n125346ab5e704df281e1d9bb81189e88b128" .. "vin:DryWhiteWine"
+":n125346ab5e704df281e1d9bb81189e88b131" .. "vin:DryWine"
+":n125346ab5e704df281e1d9bb81189e88b139" .. "vin:FrenchWine"
+":n125346ab5e704df281e1d9bb81189e88b143" .. "vin:FullBodiedWine"
+":n125346ab5e704df281e1d9bb81189e88b147" .. "vin:Gamay"
+":n125346ab5e704df281e1d9bb81189e88b153" .. "vin:GermanWine"
+":n125346ab5e704df281e1d9bb81189e88b157" .. "vin:IceWine"
+":n125346ab5e704df281e1d9bb81189e88b170" .. "vin:ItalianWine"
+":n125346ab5e704df281e1d9bb81189e88b179" .. "vin:Loire"
+":n125346ab5e704df281e1d9bb81189e88b183" .. "vin:Margaux"
+":n125346ab5e704df281e1d9bb81189e88b190" .. "vin:Medoc"
+":n125346ab5e704df281e1d9bb81189e88b196" .. "vin:Meritage"
+":n125346ab5e704df281e1d9bb81189e88b209" .. "vin:Merlot"
+":n125346ab5e704df281e1d9bb81189e88b225" .. "vin:Meursault"
+":n125346ab5e704df281e1d9bb81189e88b230" .. "vin:Muscadet"
+":n125346ab5e704df281e1d9bb81189e88b239" .. "vin:Pauillac"
+":n125346ab5e704df281e1d9bb81189e88b247" .. "vin:PetiteSyrah"
+":n125346ab5e704df281e1d9bb81189e88b263" .. "vin:PinotBlanc"
+":n125346ab5e704df281e1d9bb81189e88b270" .. "vin:PinotNoir"
+":n125346ab5e704df281e1d9bb81189e88b281" .. "vin:RedBordeaux"
+":n125346ab5e704df281e1d9bb81189e88b288" .. "vin:RedBurgundy"
+":n125346ab5e704df281e1d9bb81189e88b293" .. "vin:RedTableWine"
+":n125346ab5e704df281e1d9bb81189e88b297" .. "vin:RedWine"
+":n125346ab5e704df281e1d9bb81189e88b301" .. "vin:Riesling"
+":n125346ab5e704df281e1d9bb81189e88b308" .. "vin:RoseWine"
+":n125346ab5e704df281e1d9bb81189e88b312" .. "vin:Sancerre"
+":n125346ab5e704df281e1d9bb81189e88b324" .. "vin:SauvignonBlanc"
+":n125346ab5e704df281e1d9bb81189e88b330" .. "vin:Semillon"
+":n125346ab5e704df281e1d9bb81189e88b336" .. "vin:SemillonOrSauvignonBlanc"
+":n125346ab5e704df281e1d9bb81189e88b348" .. "vin:StEmilion"
+":n125346ab5e704df281e1d9bb81189e88b356" .. "vin:SweetRiesling"
+":n125346ab5e704df281e1d9bb81189e88b365" .. "vin:SweetWine"
+":n125346ab5e704df281e1d9bb81189e88b369" .. "vin:TableWine"
+":n125346ab5e704df281e1d9bb81189e88b373" .. "vin:TexasWine"
+":n125346ab5e704df281e1d9bb81189e88b377" .. "vin:Tours"
+":n125346ab5e704df281e1d9bb81189e88b384" .. "vin:WhiteBordeaux"
+":n125346ab5e704df281e1d9bb81189e88b391" .. "vin:WhiteBurgundy"
+":n125346ab5e704df281e1d9bb81189e88b396" .. "vin:WhiteLoire"
+":n125346ab5e704df281e1d9bb81189e88b404" .. "vin:WhiteNonSweetWine"
+":n125346ab5e704df281e1d9bb81189e88b411" .. "vin:WhiteTableWine"
+":n125346ab5e704df281e1d9bb81189e88b415" .. "vin:WhiteWine"
+":n125346ab5e704df281e1d9bb81189e88b427" .. "vin:WineBody"
+":n125346ab5e704df281e1d9bb81189e88b431" .. "vin:WineColor"
+":n125346ab5e704df281e1d9bb81189e88b435" .. "vin:WineDescriptor"
+":n125346ab5e704df281e1d9bb81189e88b438" .. "vin:WineFlavor"
+":n125346ab5e704df281e1d9bb81189e88b442" .. "vin:WineSugar"
+":n125346ab5e704df281e1d9bb81189e88b446" .. "vin:Zinfandel"
+center footer Generated by [[https://github.com/edmondchuc/ontogram https://github.com/edmondchuc/ontogram]]
+@enduml

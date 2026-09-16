@@ -1,0 +1,69 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix lis: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix cfihos: <http://data.cfihos.org/rdl/> .
+@prefix ex: <http://example.com/> .
+
+cfihos:CFIHOS-30000360T a owl:Class ;
+    rdfs:label "power cable" .
+
+cfihos:CFIHOS-40000201 a owl:Class ;
+    rdfs:label "length" .
+
+cfihos:RealMeasureTypeDatum a owl:Class ;
+    rdfs:label "RealMeasureTypeDatum" .
+
+unit:Meter a owl:Class ;
+    rdfs:label "Meter" .
+
+lis:hasQuality rdf:type owl:ObjectProperty.
+
+lis:QualityQuantifiedAs a owl:ObjectProperty.
+
+lis:datumValue a owl:DatatypeProperty .
+
+lis:datumUOM a owl:ObjectProperty .
+
+ex:6343 a owl:Class ;
+    rdfs:subClassOf cfihos:CFIHOS-30000360T ;
+    lis:hasQuality ex:7345.
+
+ex:7345 a owl:Class ;
+    rdfs:subClassOf cfihos:CFIHOS-40000201 ;
+    lis:QualityQuantifiedAs ex:6376 .
+
+ex:6376 a owl:Class ;   
+   rdfs:subClassOf cfihos:RealMeasureTypeDatum ; 
+   lis:datumValue "1000"^^xsd:string ;
+   lis:datumUOM unit:Meter .
+
+
+lis:hasQuality
+    a rdf:Property ;
+    a owl:ObjectProperty ;
+    rdfs:domain ex:6343 ;
+    rdfs:range ex:7345 .
+
+lis:hasQuality
+    rdfs:label "hasQuality" .
+
+lis:QualityQuantifiedAs
+    a rdf:Property ;
+    a owl:ObjectProperty ;
+    rdfs:domain ex:7345 ;
+    rdfs:range ex:6376 .
+
+lis:QualityQuantifiedAs
+    rdfs:label "QualityQuantifiedAs" .
+
+lis:datumUOM
+    a rdf:Property ;
+    a owl:ObjectProperty ;
+    rdfs:domain ex:6376 ;
+    rdfs:range unit:Meter .
+
+lis:datumUOM
+    rdfs:label "datumUOM" .

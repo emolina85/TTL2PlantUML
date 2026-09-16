@@ -1,0 +1,130 @@
+@startuml
+title Untitled
+":University" <|-- ":Course"
+":Course" <|-- ":Course_work"
+":University" <|-- ":Department"
+":University" <|-- ":Exams"
+":University" <|-- ":Faculty"
+":University" <|-- ":Lab_room"
+":University" <|-- ":Lecture_hall"
+":University" <|-- ":Lecturer"
+":University" <|-- ":Library"
+":University" <|-- ":Program"
+":University" <|-- ":Student"
+":University" <|-- ":TA"
+":University" <|-- ":Thesis"
+"owl:Thing" <|-- ":University"
+":University" <|-- ":academic_staff"
+":Course" <|-- ":C1"
+":Course" <|-- ":C2"
+":Course" <|-- ":C3"
+":Course" <|-- ":C4"
+":Course" <|-- ":C5"
+":Department" <|-- ":D1"
+":Department" <|-- ":D2"
+":Faculty" <|-- ":F1"
+":Faculty" <|-- ":F2"
+":Faculty" <|-- ":F3"
+":Lecturer" <|-- ":L1"
+":Lecturer" <|-- ":L2"
+":Lecturer" <|-- ":L3"
+":Student" <|-- ":S1"
+":Student" <|-- ":S2"
+":Student" <|-- ":S3"
+":TA" <|-- ":TA1"
+":TA" <|-- ":TA2"
+":TA" <|-- ":TA3"
+":TA" <|-- ":TA4"
+":University" <|-- ":U1"
+":University" <|-- ":U2"
+Class ":n7fcc5c7bd97e445587e30392a9c85184b1" [[n7fcc5c7bd97e445587e30392a9c85184b1]] {
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#department_code :department_code]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
+}
+Class ":Course" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Course]] {
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#course_code :course_code]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
+}
+Class ":Course_work" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Course_work]] {
+}
+Class ":Department" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Department]] {
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#department_code :department_code]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
+}
+Class ":Exams" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Exams]] {
+}
+Class ":Faculty" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Faculty]] {
+}
+Class ":Lab_room" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lab_room]] {
+}
+Class ":Lecture_hall" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecture_hall]] {
+}
+Class ":Lecturer" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Lecturer]] {
+}
+Class ":Library" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Library]] {
+}
+Class ":Program" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Program]] {
+}
+Class ":Student" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Student]] {
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#grade :grade]] : [[http://www.w3.org/2001/XMLSchema#double xsd:double]]
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#student_id :student_id]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
+}
+Class ":TA" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA]] {
+}
+Class ":Thesis" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#Thesis]] {
+}
+Class ":University" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#University]] {
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#location :location]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
+[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#name :name]] : [[http://www.w3.org/2001/XMLSchema#string xsd:string]]
+}
+Class ":academic_staff" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#academic_staff]] {
+}
+Class ":C1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#C1]] {
+}
+Class ":C2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#C2]] {
+}
+Class ":C3" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#C3]] {
+}
+Class ":C4" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#C4]] {
+}
+Class ":C5" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#C5]] {
+}
+Class ":D1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#D1]] {
+}
+Class ":D2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#D2]] {
+}
+Class ":F1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#F1]] {
+}
+Class ":F2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#F2]] {
+}
+Class ":F3" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#F3]] {
+}
+Class ":L1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#L1]] {
+}
+Class ":L2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#L2]] {
+}
+Class ":L3" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#L3]] {
+}
+Class ":S1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#S1]] {
+}
+Class ":S2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#S2]] {
+}
+Class ":S3" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#S3]] {
+}
+Class ":TA1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA1]] {
+}
+Class ":TA2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA2]] {
+}
+Class ":TA3" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA3]] {
+}
+Class ":TA4" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#TA4]] {
+}
+Class ":U1" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#U1]] {
+}
+Class ":U2" [[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#U2]] {
+}
+":TA" --> ":Department" : "[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#belonging_to :belonging_to]]"
+":University" --> ":Faculty" : "[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#faculties_of_university :faculties_of_university]]"
+":Student" --> ":Course" : "[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#is_studying :is_studying]]"
+":Faculty" --> ":Lecturer" : "[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#lecturers_of_faculty :lecturers_of_faculty]]"
+":Course" --> ":Faculty" : "[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#offered_by :offered_by]]"
+":Faculty" --> ":Course" : "[[http://www.semanticweb.org/midos/ontologies/2022/11/untitled-ontology-14#offers :offers]]"
+center footer Generated by [[https://github.com/edmondchuc/ontogram https://github.com/edmondchuc/ontogram]]
+@enduml
