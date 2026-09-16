@@ -1,0 +1,211 @@
+@startuml
+title Industrial Data Ontology
+":Temporal" <|-- ":Activity"
+":Activity" <|-- ":ActivityProfile"
+":Disposition" <|-- ":Capability"
+":PhysicalObject" <|-- ":Compound"
+":Potential" <|-- ":Disposition"
+":Activity" <|-- ":Event"
+":PhysicalObject" <|-- ":Feature"
+":Capability" <|-- ":Function"
+":Object" <|-- ":FunctionalObject"
+":PhysicalObject" <|-- ":InanimatePhysicalObject"
+":Object" <|-- ":InformationObject"
+":InstantRegion" <|-- ":Instant"
+":TemporalRegion" <|-- ":InstantRegion"
+":Potential" <|-- ":Interest"
+":IntervalRegion" <|-- ":Interval"
+":TemporalRegion" <|-- ":IntervalRegion"
+":SpatialLocation" <|-- ":LineInSpace"
+":Object" <|-- ":Location"
+":Quality" <|-- ":MaterialCompositionQuality"
+":PhysicalObject" <|-- ":Organism"
+":Object" <|-- ":Organization"
+":Organism" <|-- ":Person"
+":PhysicalObject" <|-- ":Phase"
+":Quality" <|-- ":PhaseQuality"
+":PhysicalObject" <|-- ":PhysicalArtefact"
+":Object" <|-- ":PhysicalObject"
+":Quality" <|-- ":PhysicalQuantity"
+":SpatialLocation" <|-- ":PlaneInSpace"
+":SpatialLocation" <|-- ":PointInSpace"
+":Dependent" <|-- ":Potential"
+":Dependent" <|-- ":Quality"
+":InformationObject" <|-- ":QualityDatum"
+":Potential" <|-- ":Role"
+":QualityDatum" <|-- ":ScalarQuantityDatum"
+":UnitOfMeasure" <|-- ":Scale"
+":Quality" <|-- ":ShapeQuality"
+":Location" <|-- ":Site"
+":Location" <|-- ":SpatialLocation"
+":Temporal" <|-- ":SpatiotemporalRegion"
+":InanimatePhysicalObject" <|-- ":Stream"
+":FunctionalObject" <|-- ":System"
+":Temporal" <|-- ":TemporalRegion"
+":InformationObject" <|-- ":UnitOfMeasure"
+":SpatialLocation" <|-- ":VolumeInSpace"
+Class ":nc5d2ad03114046e1b0ade482720bd089b3" [[nc5d2ad03114046e1b0ade482720bd089b3]] {
+}
+Class ":nc5d2ad03114046e1b0ade482720bd089b6" [[nc5d2ad03114046e1b0ade482720bd089b6]] {
+}
+Class ":nc5d2ad03114046e1b0ade482720bd089b27" [[nc5d2ad03114046e1b0ade482720bd089b27]] {
+}
+Class ":nc5d2ad03114046e1b0ade482720bd089b49" [[nc5d2ad03114046e1b0ade482720bd089b49]] {
+}
+Class ":nc5d2ad03114046e1b0ade482720bd089b55" [[nc5d2ad03114046e1b0ade482720bd089b55]] {
+}
+Class ":nc5d2ad03114046e1b0ade482720bd089b71" [[nc5d2ad03114046e1b0ade482720bd089b71]] {
+}
+Class ":Activity" [[http://rds.posccaesar.org/ontology/lis14/rdl/Activity]] {
+}
+Class ":ActivityProfile" [[http://rds.posccaesar.org/ontology/lis14/rdl/ActivityProfile]] {
+}
+Class ":Actual" [[http://rds.posccaesar.org/ontology/lis14/rdl/Actual]] {
+}
+Class ":Capability" [[http://rds.posccaesar.org/ontology/lis14/rdl/Capability]] {
+}
+Class ":Compound" [[http://rds.posccaesar.org/ontology/lis14/rdl/Compound]] {
+}
+Class ":Dependent" [[http://rds.posccaesar.org/ontology/lis14/rdl/Dependent]] {
+}
+Class ":Disposition" [[http://rds.posccaesar.org/ontology/lis14/rdl/Disposition]] {
+}
+Class ":Event" [[http://rds.posccaesar.org/ontology/lis14/rdl/Event]] {
+}
+Class ":Feature" [[http://rds.posccaesar.org/ontology/lis14/rdl/Feature]] {
+}
+Class ":Function" [[http://rds.posccaesar.org/ontology/lis14/rdl/Function]] {
+}
+Class ":FunctionalObject" [[http://rds.posccaesar.org/ontology/lis14/rdl/FunctionalObject]] {
+}
+Class ":InanimatePhysicalObject" [[http://rds.posccaesar.org/ontology/lis14/rdl/InanimatePhysicalObject]] {
+}
+Class ":InformationObject" [[http://rds.posccaesar.org/ontology/lis14/rdl/InformationObject]] {
+}
+Class ":Instant" [[http://rds.posccaesar.org/ontology/lis14/rdl/Instant]] {
+}
+Class ":InstantRegion" [[http://rds.posccaesar.org/ontology/lis14/rdl/InstantRegion]] {
+}
+Class ":Interest" [[http://rds.posccaesar.org/ontology/lis14/rdl/Interest]] {
+}
+Class ":Interval" [[http://rds.posccaesar.org/ontology/lis14/rdl/Interval]] {
+}
+Class ":IntervalRegion" [[http://rds.posccaesar.org/ontology/lis14/rdl/IntervalRegion]] {
+}
+Class ":LineInSpace" [[http://rds.posccaesar.org/ontology/lis14/rdl/LineInSpace]] {
+}
+Class ":Location" [[http://rds.posccaesar.org/ontology/lis14/rdl/Location]] {
+}
+Class ":MaterialCompositionQuality" [[http://rds.posccaesar.org/ontology/lis14/rdl/MaterialCompositionQuality]] {
+}
+Class ":Object" [[http://rds.posccaesar.org/ontology/lis14/rdl/Object]] {
+}
+Class ":Organism" [[http://rds.posccaesar.org/ontology/lis14/rdl/Organism]] {
+}
+Class ":Organization" [[http://rds.posccaesar.org/ontology/lis14/rdl/Organization]] {
+}
+Class ":Person" [[http://rds.posccaesar.org/ontology/lis14/rdl/Person]] {
+}
+Class ":Phase" [[http://rds.posccaesar.org/ontology/lis14/rdl/Phase]] {
+}
+Class ":PhaseQuality" [[http://rds.posccaesar.org/ontology/lis14/rdl/PhaseQuality]] {
+}
+Class ":PhysicalArtefact" [[http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalArtefact]] {
+}
+Class ":PhysicalObject" [[http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalObject]] {
+}
+Class ":PhysicalQuantity" [[http://rds.posccaesar.org/ontology/lis14/rdl/PhysicalQuantity]] {
+}
+Class ":PlaneInSpace" [[http://rds.posccaesar.org/ontology/lis14/rdl/PlaneInSpace]] {
+}
+Class ":PointInSpace" [[http://rds.posccaesar.org/ontology/lis14/rdl/PointInSpace]] {
+}
+Class ":Potential" [[http://rds.posccaesar.org/ontology/lis14/rdl/Potential]] {
+}
+Class ":Quality" [[http://rds.posccaesar.org/ontology/lis14/rdl/Quality]] {
+}
+Class ":QualityDatum" [[http://rds.posccaesar.org/ontology/lis14/rdl/QualityDatum]] {
+}
+Class ":Role" [[http://rds.posccaesar.org/ontology/lis14/rdl/Role]] {
+}
+Class ":ScalarQuantityDatum" [[http://rds.posccaesar.org/ontology/lis14/rdl/ScalarQuantityDatum]] {
+}
+Class ":Scale" [[http://rds.posccaesar.org/ontology/lis14/rdl/Scale]] {
+}
+Class ":ShapeQuality" [[http://rds.posccaesar.org/ontology/lis14/rdl/ShapeQuality]] {
+}
+Class ":Site" [[http://rds.posccaesar.org/ontology/lis14/rdl/Site]] {
+}
+Class ":SpatialLocation" [[http://rds.posccaesar.org/ontology/lis14/rdl/SpatialLocation]] {
+}
+Class ":SpatiotemporalRegion" [[http://rds.posccaesar.org/ontology/lis14/rdl/SpatiotemporalRegion]] {
+}
+Class ":Specified" [[http://rds.posccaesar.org/ontology/lis14/rdl/Specified]] {
+}
+Class ":Stream" [[http://rds.posccaesar.org/ontology/lis14/rdl/Stream]] {
+}
+Class ":System" [[http://rds.posccaesar.org/ontology/lis14/rdl/System]] {
+}
+Class ":Temporal" [[http://rds.posccaesar.org/ontology/lis14/rdl/Temporal]] {
+}
+Class ":TemporalRegion" [[http://rds.posccaesar.org/ontology/lis14/rdl/TemporalRegion]] {
+}
+Class ":UnitOfMeasure" [[http://rds.posccaesar.org/ontology/lis14/rdl/UnitOfMeasure]] {
+}
+Class ":VolumeInSpace" [[http://rds.posccaesar.org/ontology/lis14/rdl/VolumeInSpace]] {
+}
+":Activity" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/activityPartOf :activityPartOf]]"
+":PhysicalObject" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/arrangedPartOf :arrangedPartOf]]"
+":InformationObject" --> ":nc5d2ad03114046e1b0ade482720bd089b3" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/concretizedBy :concretizedBy]]"
+":nc5d2ad03114046e1b0ade482720bd089b6" --> ":InformationObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/concretizes :concretizes]]"
+":PhysicalObject" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/containedBy :containedBy]]"
+":PhysicalObject" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/contains :contains]]"
+":InformationObject" --> ":InformationObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/contentPartOf :contentPartOf]]"
+":QualityDatum" --> ":UnitOfMeasure" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/datumUOM :datumUOM]]"
+":FunctionalObject" --> ":System" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/functionalPartOf :functionalPartOf]]"
+":Activity" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasActivityPart :hasActivityPart]]"
+":PhysicalObject" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasArrangedPart :hasArrangedPart]]"
+":InformationObject" --> ":InformationObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasContentPart :hasContentPart]]"
+":System" --> ":FunctionalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasFunctionalPart :hasFunctionalPart]]"
+":PhysicalObject" --> ":Compound" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasMaterialPart :hasMaterialPart]]"
+":Activity" --> ":Object" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasParticipant :hasParticipant]]"
+":Activity" --> ":QualityDatum" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasParticipantQualityQuantifiedAs :hasParticipantQualityQuantifiedAs]]"
+":PhysicalObject" --> ":PhysicalQuantity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasPhysicalQuantity :hasPhysicalQuantity]]"
+":Object" --> ":Potential" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasPotential :hasPotential]]"
+":Object" --> ":Quality" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasQuality :hasQuality]]"
+":Object" --> ":QualityDatum" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasQualityQuantifiedAs :hasQualityQuantifiedAs]]"
+":Location" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasResident :hasResident]]"
+":nc5d2ad03114046e1b0ade482720bd089b49" --> ":SpatialLocation" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasSpatialExtent :hasSpatialExtent]]"
+":Activity" --> ":SpatiotemporalRegion" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasSpatiotemporalExtent :hasSpatiotemporalExtent]]"
+":Location" --> ":Location" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasSubLocation :hasSubLocation]]"
+":Temporal" --> ":TemporalRegion" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasTemporalExtent :hasTemporalExtent]]"
+":Temporal" --> ":Temporal" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/hasTemporalPart :hasTemporalPart]]"
+":Specified" --> ":Actual" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/implementedBy :implementedBy]]"
+":Actual" --> ":Specified" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/implements :implements]]"
+":Compound" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/materialPartOf :materialPartOf]]"
+":Activity" --> ":Site" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/occursIn :occursIn]]"
+":Object" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/participantIn :participantIn]]"
+":PhysicalQuantity" --> ":PhysicalObject" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/physicalQuantityOf :physicalQuantityOf]]"
+":Potential" --> ":Object" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/potentialOf :potentialOf]]"
+":ActivityProfile" --> ":Quality" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/profileOfQuality :profileOfQuality]]"
+":Quality" --> ":Object" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/qualityOf :qualityOf]]"
+":Quality" --> ":ActivityProfile" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/qualityProfiledIn :qualityProfiledIn]]"
+":Quality" --> ":QualityDatum" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/qualityQuantifiedAs :qualityQuantifiedAs]]"
+":QualityDatum" --> ":Quality" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/quantifiesQuality :quantifiesQuality]]"
+":QualityDatum" --> ":Object" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/quantifiesQualityOf :quantifiesQualityOf]]"
+":QualityDatum" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/quantifiesQualityOfParticipantIn :quantifiesQualityOfParticipantIn]]"
+":Potential" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/realizedIn :realizedIn]]"
+":Activity" --> ":Potential" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/realizes :realizes]]"
+":PhysicalObject" --> ":Location" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/residesIn :residesIn]]"
+":Site" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/siteOf :siteOf]]"
+":SpatialLocation" --> ":nc5d2ad03114046e1b0ade482720bd089b71" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/spatialExtentOf :spatialExtentOf]]"
+":SpatiotemporalRegion" --> ":Activity" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/spatiotemporalExtentOf :spatiotemporalExtentOf]]"
+":Location" --> ":Location" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/subLocationOf :subLocationOf]]"
+":TemporalRegion" --> ":Temporal" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/temporalExtentOf :temporalExtentOf]]"
+":Temporal" --> ":Temporal" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/temporalPartOf :temporalPartOf]]"
+":UnitOfMeasure" --> ":QualityDatum" : "[[http://rds.posccaesar.org/ontology/lis14/rdl/uomOfDatum :uomOfDatum]]"
+header
+Creator: https://orcid.org/0000-0002-7167-7321 
+endheader
+center footer Generated by [[https://github.com/edmondchuc/ontogram https://github.com/edmondchuc/ontogram]]
+@enduml

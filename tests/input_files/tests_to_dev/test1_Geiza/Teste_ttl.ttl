@@ -1,0 +1,29 @@
+@prefix cfihos: <http://data.cfihos.org/rdl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <https://data.example.com/l9gc/> .
+@prefix lis: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
+
+### Classes
+cfihos:CFIHOS-30000360T a owl:Class ;
+    rdfs:label "power cable" .
+
+cfihos:CFIHOS-4328 a owl:Class ;
+    rdfs:label "design pressure" .
+
+cfihos:RealMeasureTypeDatum a owl:Class ;
+    rdfs:label "RealMeasureTypeDatum" .
+
+### Individuals
+ex:2384 a owl:NamedIndividual ;
+    a cfihos:CFIHOS-3000521E ;
+    lis:hasQuality cfihos:design_pressure .
+
+ex:8453 a owl:NamedIndividual ;
+    a cfihos:CFIHOS-4328 ;
+    lis:QualityQuantifiedAs ex:7533 .
+
+ex:7533 a owl:NamedIndividual ;
+    a cfihos:RealMeasureTypeDatum ;
+    lis:datumValue "10.0" ;
+    lis:datumUOM "bar" .

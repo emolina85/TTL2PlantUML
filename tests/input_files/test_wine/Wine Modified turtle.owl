@@ -1,0 +1,1324 @@
+@prefix : <http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix vin: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix food: <http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/TR/2003/PR-owl-guide-20031209/food> .
+
+<http://www.w3.org/TR/2003/PR-owl-guide-20031209/food> rdf:type owl:Ontology ;
+                                                        owl:imports <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine> ;
+                                                        rdfs:comment """
+      Derived from the DAML Wine ontology at 
+      http://ontolingua.stanford.edu/doc/chimaera/ontologies/wines.daml
+      Substantially modified.
+    """ .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#course
+food:course rdf:type owl:ObjectProperty ;
+            rdfs:domain food:Meal ;
+            rdfs:range food:MealCourse .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasDrink
+food:hasDrink rdf:type owl:ObjectProperty ;
+              rdfs:domain food:MealCourse ;
+              rdfs:range food:PotableLiquid .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#hasFood
+food:hasFood rdf:type owl:ObjectProperty ;
+             rdfs:domain food:MealCourse ;
+             rdfs:range food:EdibleThing .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#madeFromFruit
+food:madeFromFruit rdf:type owl:ObjectProperty ;
+                   rdfs:domain food:ConsumableThing ;
+                   rdfs:range food:Fruit .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFish
+food:BlandFish rdf:type owl:Class ;
+               rdfs:subClassOf food:Fish ;
+               owl:disjointWith food:NonBlandFish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BlandFishCourse
+food:BlandFishCourse rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty food:hasFood ;
+                                                                  owl:allValuesFrom food:BlandFish
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty food:hasDrink ;
+                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                           owl:onProperty vin:hasFlavor ;
+                                                           owl:hasValue food:Delicate
+                                                         ]
+                                     ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessert
+food:CheeseNutsDessert rdf:type owl:Class ;
+                       rdfs:subClassOf food:Dessert ;
+                       owl:disjointWith food:SweetDessert .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#CheeseNutsDessertCourse
+food:CheeseNutsDessertCourse rdf:type owl:Class ;
+                             owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty food:hasFood ;
+                                                                          owl:allValuesFrom food:CheeseNutsDessert
+                                                                        ]
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ] ;
+                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                               owl:onProperty food:hasDrink ;
+                                               owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty vin:hasColor ;
+                                                                   owl:hasValue food:Red
+                                                                 ]
+                                             ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ConsumableThing
+food:ConsumableThing rdf:type owl:Class .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowl
+food:DarkMeatFowl rdf:type owl:Class ;
+                  rdfs:subClassOf food:Fowl ;
+                  owl:disjointWith food:LightMeatFowl .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DarkMeatFowlCourse
+food:DarkMeatFowlCourse rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty food:hasFood ;
+                                                                     owl:allValuesFrom food:DarkMeatFowl
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasBody ;
+                                                              owl:hasValue food:Light
+                                                            ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasColor ;
+                                                              owl:hasValue food:Red
+                                                            ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasFlavor ;
+                                                              owl:hasValue food:Delicate
+                                                            ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasSugar ;
+                                                              owl:hasValue food:Dry
+                                                            ]
+                                        ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dessert
+food:Dessert rdf:type owl:Class ;
+             rdfs:subClassOf food:EdibleThing ;
+             owl:disjointWith food:Fowl ,
+                              food:Fruit ,
+                              food:Meat ,
+                              food:OtherTomatoBasedFood ,
+                              food:Pasta ,
+                              food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#DessertCourse
+food:DessertCourse rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty food:hasFood ;
+                                                                owl:allValuesFrom food:Dessert
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty food:hasDrink ;
+                                     owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                         owl:onProperty vin:hasBody ;
+                                                         owl:hasValue food:Full
+                                                       ]
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty food:hasDrink ;
+                                     owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                         owl:onProperty vin:hasFlavor ;
+                                                         owl:hasValue food:Strong
+                                                       ]
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty food:hasDrink ;
+                                     owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                         owl:onProperty vin:hasSugar ;
+                                                         owl:hasValue food:Sweet
+                                                       ]
+                                   ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EatingGrape
+food:EatingGrape rdf:type owl:Class ;
+                 rdfs:subClassOf food:Grape .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#EdibleThing
+food:EdibleThing rdf:type owl:Class ;
+                 rdfs:subClassOf food:ConsumableThing ;
+                 owl:disjointWith food:Meal ,
+                                  food:MealCourse ,
+                                  food:PotableLiquid .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fish
+food:Fish rdf:type owl:Class ;
+          rdfs:subClassOf food:Seafood ;
+          owl:disjointWith food:Shellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FishCourse
+food:FishCourse rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty food:hasFood ;
+                                                             owl:allValuesFrom food:Fish
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty food:hasDrink ;
+                                  owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                      owl:onProperty vin:hasBody ;
+                                                      owl:hasValue food:Medium
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty food:hasDrink ;
+                                  owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                      owl:onProperty vin:hasSugar ;
+                                                      owl:hasValue food:Dry
+                                                    ]
+                                ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fowl
+food:Fowl rdf:type owl:Class ;
+          rdfs:subClassOf food:EdibleThing ;
+          owl:disjointWith food:Fruit ,
+                           food:Meat ,
+                           food:OtherTomatoBasedFood ,
+                           food:Pasta ,
+                           food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Fruit
+food:Fruit rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:unionOf ( food:NonSweetFruit
+                                               food:SweetFruit
+                                             )
+                               ] ;
+           owl:disjointWith food:Meat ,
+                            food:OtherTomatoBasedFood ,
+                            food:Pasta ,
+                            food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FruitCourse
+food:FruitCourse rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty food:hasFood ;
+                                                              owl:allValuesFrom food:Fruit
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty food:hasDrink ;
+                                   owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                       owl:onProperty vin:hasBody ;
+                                                       owl:hasValue food:Medium
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty food:hasDrink ;
+                                   owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                       owl:onProperty vin:hasColor ;
+                                                       owl:hasValue food:White
+                                                     ]
+                                 ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Grape
+food:Grape rdf:type owl:Class ;
+           rdfs:subClassOf food:SweetFruit .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Juice
+food:Juice rdf:type owl:Class ;
+           rdfs:subClassOf food:PotableLiquid ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty food:madeFromFruit ;
+                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                           ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowl
+food:LightMeatFowl rdf:type owl:Class ;
+                   rdfs:subClassOf food:Fowl .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#LightMeatFowlCourse
+food:LightMeatFowlCourse rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty food:hasFood ;
+                                                                      owl:allValuesFrom food:LightMeatFowl
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty food:hasDrink ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty vin:hasBody ;
+                                                               owl:hasValue food:Medium
+                                                             ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty food:hasDrink ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty vin:hasColor ;
+                                                               owl:hasValue food:White
+                                                             ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty food:hasDrink ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty vin:hasFlavor ;
+                                                               owl:hasValue food:Moderate
+                                                             ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty food:hasDrink ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty vin:hasSugar ;
+                                                               owl:hasValue food:Dry
+                                                             ]
+                                         ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meal
+food:Meal rdf:type owl:Class ;
+          rdfs:subClassOf food:ConsumableThing ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty food:course ;
+                            owl:allValuesFrom food:MealCourse
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty food:course ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          owl:disjointWith food:MealCourse ,
+                           food:PotableLiquid .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MealCourse
+food:MealCourse rdf:type owl:Class ;
+                rdfs:subClassOf food:ConsumableThing ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty food:hasDrink ;
+                                  owl:allValuesFrom food:Wine
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty food:hasDrink ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty food:hasFood ;
+                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                owl:disjointWith food:PotableLiquid .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Meat
+food:Meat rdf:type owl:Class ;
+          rdfs:subClassOf food:EdibleThing ;
+          owl:disjointWith food:OtherTomatoBasedFood ,
+                           food:Pasta ,
+                           food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFish
+food:NonBlandFish rdf:type owl:Class ;
+                  rdfs:subClassOf food:Fish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonBlandFishCourse
+food:NonBlandFishCourse rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty food:hasFood ;
+                                                                     owl:allValuesFrom food:NonBlandFish
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasFlavor ;
+                                                              owl:hasValue food:Moderate
+                                                            ]
+                                        ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonConsumableThing
+food:NonConsumableThing rdf:type owl:Class .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfish
+food:NonOysterShellfish rdf:type owl:Class ;
+                        rdfs:subClassOf food:Shellfish ;
+                        owl:disjointWith food:OysterShellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonOysterShellfishCourse
+food:NonOysterShellfishCourse rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty food:hasFood ;
+                                                                           owl:allValuesFrom food:NonOysterShellfish
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                owl:onProperty food:hasDrink ;
+                                                owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty vin:hasSugar ;
+                                                                    owl:hasValue food:Dry
+                                                                  ]
+                                              ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeat
+food:NonRedMeat rdf:type owl:Class ;
+                rdfs:subClassOf food:Meat ;
+                owl:disjointWith food:RedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonRedMeatCourse
+food:NonRedMeatCourse rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty food:hasFood ;
+                                                                   owl:allValuesFrom food:NonRedMeat
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty food:hasDrink ;
+                                        owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                            owl:onProperty vin:hasBody ;
+                                                            owl:hasValue food:Medium
+                                                          ]
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty food:hasDrink ;
+                                        owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                            owl:onProperty vin:hasColor ;
+                                                            owl:hasValue food:White
+                                                          ]
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty food:hasDrink ;
+                                        owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                            owl:onProperty vin:hasFlavor ;
+                                                            owl:hasValue food:Strong
+                                                          ]
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty food:hasDrink ;
+                                        owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                            owl:onProperty vin:hasSugar ;
+                                                            owl:hasValue food:Dry
+                                                          ]
+                                      ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeat
+food:NonSpicyRedMeat rdf:type owl:Class ;
+                     rdfs:subClassOf food:RedMeat ;
+                     owl:disjointWith food:SpicyRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSpicyRedMeatCourse
+food:NonSpicyRedMeatCourse rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty food:hasFood ;
+                                                                        owl:allValuesFrom food:NonSpicyRedMeat
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty food:hasDrink ;
+                                             owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty vin:hasFlavor ;
+                                                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                     owl:oneOf ( food:Moderate
+                                                                                                 food:Strong
+                                                                                               )
+                                                                                   ]
+                                                               ]
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty food:hasDrink ;
+                                             owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty vin:hasBody ;
+                                                                 owl:hasValue food:Medium
+                                                               ]
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty food:hasDrink ;
+                                             owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty vin:hasColor ;
+                                                                 owl:hasValue food:Red
+                                                               ]
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty food:hasDrink ;
+                                             owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty vin:hasSugar ;
+                                                                 owl:hasValue food:Dry
+                                                               ]
+                                           ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruit
+food:NonSweetFruit rdf:type owl:Class ;
+                   rdfs:subClassOf food:EdibleThing ;
+                   owl:disjointWith food:SweetFruit .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#NonSweetFruitCourse
+food:NonSweetFruitCourse rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty food:hasFood ;
+                                                                      owl:allValuesFrom food:NonSweetFruit
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty food:hasDrink ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty vin:hasFlavor ;
+                                                               owl:hasValue food:Delicate
+                                                             ]
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty food:hasDrink ;
+                                           owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                               owl:onProperty vin:hasSugar ;
+                                                               owl:hasValue food:OffDry
+                                                             ]
+                                         ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFood
+food:OtherTomatoBasedFood rdf:type owl:Class ;
+                          rdfs:subClassOf food:EdibleThing ;
+                          owl:disjointWith food:Pasta ,
+                                           food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OtherTomatoBasedFoodCourse
+food:OtherTomatoBasedFoodCourse rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty food:hasFood ;
+                                                                             owl:allValuesFrom food:OtherTomatoBasedFood
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                  owl:onProperty food:hasDrink ;
+                                                  owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty vin:hasBody ;
+                                                                      owl:hasValue food:Medium
+                                                                    ]
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty food:hasDrink ;
+                                                  owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty vin:hasColor ;
+                                                                      owl:hasValue food:Red
+                                                                    ]
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty food:hasDrink ;
+                                                  owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty vin:hasFlavor ;
+                                                                      owl:hasValue food:Moderate
+                                                                    ]
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty food:hasDrink ;
+                                                  owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty vin:hasSugar ;
+                                                                      owl:hasValue food:Dry
+                                                                    ]
+                                                ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfish
+food:OysterShellfish rdf:type owl:Class ;
+                     rdfs:subClassOf food:Shellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OysterShellfishCourse
+food:OysterShellfishCourse rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty food:hasFood ;
+                                                                        owl:allValuesFrom food:OysterShellfish
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty food:hasDrink ;
+                                             owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty vin:hasSugar ;
+                                                                 owl:hasValue food:Sweet
+                                                               ]
+                                           ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pasta
+food:Pasta rdf:type owl:Class ;
+           rdfs:subClassOf food:EdibleThing ;
+           owl:disjointWith food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamCourse
+food:PastaWithHeavyCreamCourse rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty food:hasFood ;
+                                                                            owl:allValuesFrom food:PastaWithHeavyCreamSauce
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasBody ;
+                                                                     owl:hasValue food:Medium
+                                                                   ]
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasColor ;
+                                                                     owl:hasValue food:White
+                                                                   ]
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasFlavor ;
+                                                                     owl:hasValue food:Moderate
+                                                                   ]
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasSugar ;
+                                                                     owl:hasValue food:Dry
+                                                                   ]
+                                               ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithHeavyCreamSauce
+food:PastaWithHeavyCreamSauce rdf:type owl:Class ;
+                              rdfs:subClassOf food:PastaWithWhiteSauce ;
+                              owl:disjointWith food:PastaWithLightCreamSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamCourse
+food:PastaWithLightCreamCourse rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty food:hasFood ;
+                                                                            owl:allValuesFrom food:PastaWithLightCreamSauce
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasBody ;
+                                                                     owl:hasValue food:Light
+                                                                   ]
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasColor ;
+                                                                     owl:hasValue food:White
+                                                                   ]
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasFlavor ;
+                                                                     owl:hasValue food:Delicate
+                                                                   ]
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty food:hasDrink ;
+                                                 owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty vin:hasSugar ;
+                                                                     owl:hasValue food:Dry
+                                                                   ]
+                                               ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithLightCreamSauce
+food:PastaWithLightCreamSauce rdf:type owl:Class ;
+                              rdfs:subClassOf food:PastaWithWhiteSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauce
+food:PastaWithNonSpicyRedSauce rdf:type owl:Class ;
+                               rdfs:subClassOf food:PastaWithRedSauce ;
+                               owl:disjointWith food:PastaWithSpicyRedSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithNonSpicyRedSauceCourse
+food:PastaWithNonSpicyRedSauceCourse rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty food:hasFood ;
+                                                                                  owl:allValuesFrom food:PastaWithNonSpicyRedSauce
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                       owl:onProperty food:hasDrink ;
+                                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty vin:hasBody ;
+                                                                           owl:hasValue food:Medium
+                                                                         ]
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty food:hasDrink ;
+                                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty vin:hasColor ;
+                                                                           owl:hasValue food:Red
+                                                                         ]
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty food:hasDrink ;
+                                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty vin:hasFlavor ;
+                                                                           owl:hasValue food:Moderate
+                                                                         ]
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty food:hasDrink ;
+                                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty vin:hasSugar ;
+                                                                           owl:hasValue food:Dry
+                                                                         ]
+                                                     ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithRedSauce
+food:PastaWithRedSauce rdf:type owl:Class ;
+                       rdfs:subClassOf food:Pasta ;
+                       owl:disjointWith food:PastaWithWhiteSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauce
+food:PastaWithSpicyRedSauce rdf:type owl:Class ;
+                            rdfs:subClassOf food:PastaWithRedSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithSpicyRedSauceCourse
+food:PastaWithSpicyRedSauceCourse rdf:type owl:Class ;
+                                  owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                             [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty food:hasFood ;
+                                                                               owl:allValuesFrom food:PastaWithSpicyRedSauce
+                                                                             ]
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
+                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                    owl:onProperty food:hasDrink ;
+                                                    owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty vin:hasBody ;
+                                                                        owl:hasValue food:Full
+                                                                      ]
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty food:hasDrink ;
+                                                    owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty vin:hasColor ;
+                                                                        owl:hasValue food:Red
+                                                                      ]
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty food:hasDrink ;
+                                                    owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty vin:hasFlavor ;
+                                                                        owl:hasValue food:Strong
+                                                                      ]
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty food:hasDrink ;
+                                                    owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty vin:hasSugar ;
+                                                                        owl:hasValue food:Dry
+                                                                      ]
+                                                  ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteSauce
+food:PastaWithWhiteSauce rdf:type owl:Class ;
+                         rdfs:subClassOf food:Pasta .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PotableLiquid
+food:PotableLiquid rdf:type owl:Class ;
+                   rdfs:subClassOf food:ConsumableThing .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeat
+food:RedMeat rdf:type owl:Class ;
+             rdfs:subClassOf food:Meat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RedMeatCourse
+food:RedMeatCourse rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty food:hasFood ;
+                                                                owl:allValuesFrom food:RedMeat
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty food:hasDrink ;
+                                     owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                         owl:onProperty vin:hasColor ;
+                                                         owl:hasValue food:Red
+                                                       ]
+                                   ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Seafood
+food:Seafood rdf:type owl:Class ;
+             rdfs:subClassOf food:EdibleThing .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SeafoodCourse
+food:SeafoodCourse rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty food:hasFood ;
+                                                                owl:allValuesFrom food:Seafood
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty food:hasDrink ;
+                                     owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                         owl:onProperty vin:hasColor ;
+                                                         owl:hasValue food:White
+                                                       ]
+                                   ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Shellfish
+food:Shellfish rdf:type owl:Class ;
+               rdfs:subClassOf food:Seafood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ShellfishCourse
+food:ShellfishCourse rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty food:hasFood ;
+                                                                  owl:allValuesFrom food:Shellfish
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty food:hasDrink ;
+                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                           owl:onProperty vin:hasFlavor ;
+                                                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                               owl:oneOf ( food:Moderate
+                                                                                           food:Strong
+                                                                                         )
+                                                                             ]
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty food:hasDrink ;
+                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                           owl:onProperty vin:hasBody ;
+                                                           owl:hasValue food:Full
+                                                         ]
+                                     ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeat
+food:SpicyRedMeat rdf:type owl:Class ;
+                  rdfs:subClassOf food:RedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpicyRedMeatCourse
+food:SpicyRedMeatCourse rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty food:hasFood ;
+                                                                     owl:allValuesFrom food:SpicyRedMeat
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasBody ;
+                                                              owl:hasValue food:Full
+                                                            ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasColor ;
+                                                              owl:hasValue food:Red
+                                                            ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasFlavor ;
+                                                              owl:hasValue food:Moderate
+                                                            ]
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasSugar ;
+                                                              owl:hasValue food:Dry
+                                                            ]
+                                        ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessert
+food:SweetDessert rdf:type owl:Class ;
+                  rdfs:subClassOf food:Dessert .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetDessertCourse
+food:SweetDessertCourse rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty food:hasFood ;
+                                                                     owl:allValuesFrom food:SweetDessert
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty food:hasDrink ;
+                                          owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                              owl:onProperty vin:hasColor ;
+                                                              owl:hasValue food:White
+                                                            ]
+                                        ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruit
+food:SweetFruit rdf:type owl:Class ;
+                rdfs:subClassOf food:EdibleThing .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SweetFruitCourse
+food:SweetFruitCourse rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( food:MealCourse
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty food:hasFood ;
+                                                                   owl:allValuesFrom food:SweetFruit
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty food:hasDrink ;
+                                        owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                            owl:onProperty vin:hasFlavor ;
+                                                            owl:hasValue food:Moderate
+                                                          ]
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty food:hasDrink ;
+                                        owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                            owl:onProperty vin:hasSugar ;
+                                                            owl:hasValue food:Sweet
+                                                          ]
+                                      ] .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Wine
+food:Wine rdf:type owl:Class ;
+          owl:equivalentClass vin:Wine .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Bananas
+food:Bananas rdf:type owl:NamedIndividual ,
+                      food:SweetFruit .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#BeefCurry
+food:BeefCurry rdf:type owl:NamedIndividual ,
+                        food:SpicyRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Cake
+food:Cake rdf:type owl:NamedIndividual ,
+                   food:SweetDessert .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Cheese
+food:Cheese rdf:type owl:NamedIndividual ,
+                     food:CheeseNutsDessert .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Chicken
+food:Chicken rdf:type owl:NamedIndividual ,
+                      food:LightMeatFowl .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Clams
+food:Clams rdf:type owl:NamedIndividual ,
+                    food:NonOysterShellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Crab
+food:Crab rdf:type owl:NamedIndividual ,
+                   food:NonOysterShellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Delicate
+food:Delicate rdf:type owl:NamedIndividual ,
+                       owl:Thing ;
+              owl:sameAs vin:Delicate .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Dry
+food:Dry rdf:type owl:NamedIndividual ,
+                  owl:Thing ;
+         owl:sameAs vin:Dry .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Duck
+food:Duck rdf:type owl:NamedIndividual ,
+                   food:DarkMeatFowl .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FettucineAlfRedo
+food:FettucineAlfRedo rdf:type owl:NamedIndividual ,
+                               food:PastaWithHeavyCreamSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Flounder
+food:Flounder rdf:type owl:NamedIndividual ,
+                       food:BlandFish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#FraDiavolo
+food:FraDiavolo rdf:type owl:NamedIndividual ,
+                         food:PastaWithSpicyRedSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Full
+food:Full rdf:type owl:NamedIndividual ,
+                   owl:Thing ;
+          owl:sameAs vin:Full .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#GarlickyRoast
+food:GarlickyRoast rdf:type owl:NamedIndividual ,
+                            food:SpicyRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Goose
+food:Goose rdf:type owl:NamedIndividual ,
+                    food:DarkMeatFowl .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Halibut
+food:Halibut rdf:type owl:NamedIndividual ,
+                      food:BlandFish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Light
+food:Light rdf:type owl:NamedIndividual ,
+                    owl:Thing ;
+           owl:sameAs vin:Light .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Lobster
+food:Lobster rdf:type owl:NamedIndividual ,
+                      food:NonOysterShellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Medium
+food:Medium rdf:type owl:NamedIndividual ,
+                     owl:Thing ;
+            owl:sameAs vin:Medium .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#MixedFruit
+food:MixedFruit rdf:type owl:NamedIndividual ,
+                         food:SweetFruit .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Moderate
+food:Moderate rdf:type owl:NamedIndividual ,
+                       owl:Thing ;
+              owl:sameAs vin:Moderate .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Mussels
+food:Mussels rdf:type owl:NamedIndividual ,
+                      food:NonOysterShellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Nuts
+food:Nuts rdf:type owl:NamedIndividual ,
+                   food:CheeseNutsDessert .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#OffDry
+food:OffDry rdf:type owl:NamedIndividual ,
+                     owl:Thing ;
+            owl:sameAs vin:OffDry .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Oysters
+food:Oysters rdf:type owl:NamedIndividual ,
+                      food:OysterShellfish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#PastaWithWhiteClamSauce
+food:PastaWithWhiteClamSauce rdf:type owl:NamedIndividual ,
+                                      food:PastaWithLightCreamSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Peaches
+food:Peaches rdf:type owl:NamedIndividual ,
+                      food:SweetFruit .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pie
+food:Pie rdf:type owl:NamedIndividual ,
+                  food:SweetDessert .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pizza
+food:Pizza rdf:type owl:NamedIndividual ,
+                    food:OtherTomatoBasedFood .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Pork
+food:Pork rdf:type owl:NamedIndividual ,
+                   food:NonRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Red
+food:Red rdf:type owl:NamedIndividual ,
+                  owl:Thing ;
+         owl:sameAs vin:Red .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#RoastBeef
+food:RoastBeef rdf:type owl:NamedIndividual ,
+                        food:NonSpicyRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Rose
+food:Rose rdf:type owl:NamedIndividual ,
+                   owl:Thing ;
+          owl:sameAs vin:Rose .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Scrod
+food:Scrod rdf:type owl:NamedIndividual ,
+                    food:BlandFish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#SpaghettiWithTomatoSauce
+food:SpaghettiWithTomatoSauce rdf:type owl:NamedIndividual ,
+                                       food:PastaWithNonSpicyRedSauce .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Steak
+food:Steak rdf:type owl:NamedIndividual ,
+                    food:NonSpicyRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Strong
+food:Strong rdf:type owl:NamedIndividual ,
+                     owl:Thing ;
+            owl:sameAs vin:Strong .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Sweet
+food:Sweet rdf:type owl:NamedIndividual ,
+                    owl:Thing ;
+           owl:sameAs vin:Sweet .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Swordfish
+food:Swordfish rdf:type owl:NamedIndividual ,
+                        food:NonBlandFish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#ThompsonSeedless
+food:ThompsonSeedless rdf:type owl:NamedIndividual ,
+                               food:EatingGrape .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Tuna
+food:Tuna rdf:type owl:NamedIndividual ,
+                   food:NonBlandFish .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Turkey
+food:Turkey rdf:type owl:NamedIndividual ,
+                     food:LightMeatFowl .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#Veal
+food:Veal rdf:type owl:NamedIndividual ,
+                   food:NonSpicyRedMeat .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/food#White
+food:White rdf:type owl:NamedIndividual ,
+                    owl:Thing ;
+           owl:sameAs vin:White .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Delicate
+vin:Delicate rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Dry
+vin:Dry rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Full
+vin:Full rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Light
+vin:Light rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medium
+vin:Medium rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Moderate
+vin:Moderate rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#OffDry
+vin:OffDry rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Red
+vin:Red rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Rose
+vin:Rose rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Strong
+vin:Strong rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sweet
+vin:Sweet rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#White
+vin:White rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
